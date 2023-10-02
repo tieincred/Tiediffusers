@@ -1379,6 +1379,17 @@ def main(args):
                             validation_prompt_encoder_hidden_states,
                             validation_prompt_negative_prompt_embeds,
                         )
+                        save_to_local = True
+                        if save_to_local:
+                            valditaion_save_folder = f"validation_{args.instance_data_dir}/{global_step}"
+                            if not os.path.exists(f"validation_{args.instance_data_dir}"):
+                                os.mkdir(f"validation_{args.instance_data_dir}")
+                            if not os.path.exists(valditaion_save_folder):
+                                os.mkdir(valditaion_save_folder)
+                            i = 0
+                            for image in images:
+                                image.save(os.path.join(valditaion_save_folder, f"{i}.png"))
+                                i+=1
 
             logs = {"loss": loss.detach().item(), "lr": lr_scheduler.get_last_lr()[0]}
             progress_bar.set_postfix(**logs)

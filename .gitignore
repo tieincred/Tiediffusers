@@ -174,3 +174,15 @@ tags
 .ruff_cache
 
 wandb
+checkoResults
+dog
+JL
+JL_basic
+man
+models--runwayml--stable-diffusion-v1-5
+mr_beast
+segioperez*
+trained_models
+validation_segioperez
+woman
+*.png

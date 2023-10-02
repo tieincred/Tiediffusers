@@ -6,3 +6,5 @@ torchvision
 ftfy
 tensorboard
 Jinja2
+bitsandbytes
+scipy
